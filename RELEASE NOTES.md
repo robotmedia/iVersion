@@ -1,8 +1,42 @@
+Version 1.10.6
+
+- Fixed crash when plist contains versions later than latest in app store
+
+Version 1.10.5
+
+- Fixed critical bug in NSJSONSerializer implementation
+
+Version 1.10.4
+
+- Added Portuguese and Russian translations
+- Now uses NSJSONSerializer if available, which solves problem with app store descriptions containing double quotes (iOS 4.x will still use the old parser)
+
+Version 1.10.3
+
+- Fixed potential infinite loop if release notes JSON contains 0x00 characters
+- On Mac OS, release notes are now displayed in a scrolling text field (thanks to Daij-Djan for the suggestion).
+
+Version 1.10.2
+
+- Fixed issues where alert would not appear, even with preview mode enabled, if app has already been released but has no release notes
+- Addressed possible issue on iOS 5.0.x where app store link does not work (unconfirmed).
+- StoreKit framework is no longer included on Mac OS
+- Added podspec
+
+Version 1.10.1
+
+- Fixed bug where iVersion would potentially display release notes for unreleased versions in the remote version plist if the user's version is not up to date with the latest version in the App Store
+- Fixed deprecation warning when targeting iOS 6 and above
+- iVersion now displays the StoreKit product view controller correctly even if a modally presented view controller has been displayed
+- Added iVersionDidPresentStoreKitModal and iVersionDidDismissStoreKitModal delegate methods
+- Added useAppStoreDetailsIfNoPlistEntryFound option
+- Added Danish translation
+
 Version 1.10
 
 - Added new localisation system (see README for details)
 - On iOS 6, iVersion can now use the StoreKit APIs to display the product page directly within the app.
-- iVersion now requires the Storekit framework on iOS
+- iVersion now requires the StoreKit framework on iOS
 - iVersion now requires ARC. To use iVersion in a non-ARC project, follow the instructions in the README file.
 - Dropped support for 32-bit Macs running Snow Leopard
 - Fixed deprecation warning in iOS 6
